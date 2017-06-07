@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+project( robot-detector CXX )
+find_package( OpenCV REQUIRED )
+add_executable( simple-detector SimpleDetector.cpp )
+target_compile_features(simple-detector PRIVATE cxx_range_for)
+target_link_libraries( simple-detector ${OpenCV_LIBS} )
